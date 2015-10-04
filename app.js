@@ -37,7 +37,7 @@ app.get('/appropriation/', function (req, res) {
 
 
 // url: /search/?a=1&b=2
-app.get('/revenue/', function (req, res) {
+app.get('/get_budget/', function (req, res) {
     var anti_max, anti_min,
         real_max, real_min, fcoa, year_max, year_min;
 
@@ -104,8 +104,12 @@ app.get('/revenue/', function (req, res) {
                });;
 });
 
+app.get('/budget/', function (req, res) {
+    res.render('budget');
+});
+
 app.get('/', function (req, res) {
-    res.render('index', { title: 'Home', message: 'Hello there!'});
+    res.render('index', { title: 'Home', message: 'New Brunswick Financial Data Visualization'});
 });
 
 app.use(express.static(__dirname + '/public'));

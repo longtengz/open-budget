@@ -4,16 +4,16 @@ html(lang='en')
     title!= title
 
     // CORE CSS
-    link(rel='stylesheet', href='css/bootstrap.css')
-    link(rel='stylesheet', href='css/custom.css')
-    link(rel='stylesheet', href='css/profile.css')
-    link(rel='stylesheet', href='css/animate.min.css')
-    link(rel='stylesheet', href='css/main.css')
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/custom.css')
+    link(rel='stylesheet', href='/css/profile.css')
+    link(rel='stylesheet', href='/css/animate.min.css')
+    link(rel='stylesheet', href='/css/main.css')
     // JAVASCRIPT
-    script(src='js/Chart.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js', charset='utf-8')
-    script(src='js/jquery-1.11.2.min.js')
-    script(src='js/wow.min.js')
+    script(src='/js/jquery-1.11.2.min.js')
+    script(src='/js/wow.min.js')
     script.
       new WOW().init();
 
@@ -31,7 +31,7 @@ html(lang='en')
       ul
         li
           a(href='/index') Back
-    canvas#clients(width='800', height='400')
+    canvas#clients(width='1200', height='1200')
 
     #ph_budget.header.profile.light
       .header-content
@@ -78,34 +78,39 @@ html(lang='en')
               return arr;
           }
 
+          function make_chart(search_text, value_type) {
+              $.getJSON('/get_budget/?' + search_text,function(obj){
+                arr_item = extract_prop2014(obj.data, "item");
+
+                arr_revenue2014 = extract_prop2014(obj.data, value_type);
+                arr_revenue2015 = extract_prop2015(obj.data, value_type);
+
+                var barData = {
+                      labels: arr_item,
+                      datasets: [
+                          {
+                                label: '2014 Realized Revenues',
+                                fillColor: '#382765',
+                                data:  arr_revenue2014
+                          },
+                          {
+                          label: '2015 Anticipated Revenues',
+                          fillColor: '#7BC225',
+                          data: arr_revenue2015
+                          }
+                  ]};
+              var context = document.getElementById('clients').getContext('2d');
+              var clientsChart = new Chart(context).Bar(barData);              
 
 
-          $.getJSON('/jsondata',function(obj){
-            arr_item = extract_prop2014(obj.data, "item");
+                });
+                     
+          }
 
-            console.log(arr_item);
-            arr_revenue2014 = extract_prop2014(obj.data, "anticipated");
-            arr_revenue2015 = extract_prop2015(obj.data, "anticipated");
-            console.log('blah');
-            var barData = {
-                  labels: arr_item,
-                  datasets: [
-                      {
-                            label: '2014 Realized Revenues',
-                            fillColor: '#382765',
-                            data:  arr_revenue2014
-                      },
-                      {
-                      label: '2015 Anticipated Revenues',
-                      fillColor: '#7BC225',
-                      data: arr_revenue2015
-                      }
-              ]};
-          var context = document.getElementById('clients').getContext('2d');
-          var clientsChart = new Chart(context).Bar(barData);              
+          make_chart("an=1000000&am=15000000", "anticipated");
 
 
-            });
+
 
           
           
