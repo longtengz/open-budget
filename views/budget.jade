@@ -1,0 +1,119 @@
+html(lang='en')
+  head
+
+    title!= title
+
+    // CORE CSS
+    link(rel='stylesheet', href='css/bootstrap.css')
+    link(rel='stylesheet', href='css/custom.css')
+    link(rel='stylesheet', href='css/profile.css')
+    link(rel='stylesheet', href='css/animate.min.css')
+    link(rel='stylesheet', href='css/main.css')
+    // JAVASCRIPT
+    script(src='js/Chart.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js', charset='utf-8')
+    script(src='js/jquery-1.11.2.min.js')
+    script(src='js/wow.min.js')
+    script.
+      new WOW().init();
+
+    link(rel='shortcut icon', href='http://thecityofnewbrunswick.org/clerks-office/wp-content/uploads/sites/4/2014/03/logo-16Original.png')
+
+   
+  body
+    .navBar
+     nav
+      ul.left
+        li
+          a(href='/about') About
+        li
+          a(href='/index') Home
+      ul
+        li
+          a(href='/index') Back
+    canvas#clients(width='800', height='400')
+
+    #ph_budget.header.profile.light
+      .header-content
+        br
+        center
+          p.wow(class='fa+deIn', data-wow-duration='3s') #{message}
+        br
+        br
+        center
+
+    script.
+       var arr_item;
+           var arr_revenue2014;
+           var arr_revenue2015;
+
+          function extract_prop2015 (arr_obj, prop) {
+            var arr = [];
+            var index = 0;
+
+            for (var idx = 0; idx < arr_obj.length; idx++) {
+              if (arr_obj[idx].year==2015)
+                {
+                arr[index] = arr_obj[idx][prop]; 
+                index++;
+                } 
+              }
+
+              return arr;
+          }
+
+          function extract_prop2014 (arr_obj, prop) {
+            var arr = [];
+
+            var index = 0;
+
+            for (var idx = 0; idx < arr_obj.length; idx++) {
+              if (arr_obj[idx].year==2014)
+                {
+                arr[index] = arr_obj[idx][prop];
+                index++; 
+                }
+              }
+
+              return arr;
+          }
+
+
+
+          $.getJSON('/jsondata',function(obj){
+            arr_item = extract_prop2014(obj.data, "item");
+
+            console.log(arr_item);
+            arr_revenue2014 = extract_prop2014(obj.data, "anticipated");
+            arr_revenue2015 = extract_prop2015(obj.data, "anticipated");
+            console.log('blah');
+            var barData = {
+                  labels: arr_item,
+                  datasets: [
+                      {
+                            label: '2014 Realized Revenues',
+                            fillColor: '#382765',
+                            data:  arr_revenue2014
+                      },
+                      {
+                      label: '2015 Anticipated Revenues',
+                      fillColor: '#7BC225',
+                      data: arr_revenue2015
+                      }
+              ]};
+          var context = document.getElementById('clients').getContext('2d');
+          var clientsChart = new Chart(context).Bar(barData);              
+
+
+            });
+
+          
+          
+
+
+
+          
+   FOOTER
+    footer.footer
+     .wrap
+      span.social Last Edited October 4, 2015
