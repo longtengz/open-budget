@@ -1,5 +1,47 @@
-html
+html(lang='en')
   head
+
     title!= title
+
+    // CORE CSS
+    link(rel='stylesheet', href='css/bootstrap.css')
+    link(rel='stylesheet', href='css/custom.css')
+    link(rel='stylesheet', href='css/profile.css')
+    link(rel='stylesheet', href='css/animate.min.css')
+    link(rel='stylesheet', href='css/main.css')
+    // JAVASCRIPT
+    script(src='js/jquery-1.11.2.min.js')
+    script(src='js/wow.min.js')
+    script.
+      new WOW().init();
+
+  link(rel='shortcut icon', href='http://thecityofnewbrunswick.org/clerks-office/wp-content/uploads/sites/4/2014/03/logo-16Original.png')
+
+  .navBar
+    nav
+      ul.left
+        li
+          a(href='index.html') About
+        li
+          a(href='index.html') Home
+
+      ul
+        li
+          a(href='index.html') Back
   body
-    h1!= message
+
+    #ph_index.header.profile.light
+      .header-content
+        br
+        br
+        center
+          p.wow(class='fa+deIn', data-wow-duration='5s') #{message}
+        br
+        br
+        center
+          a.button-shadowed(href='index.html') Blub bloop
+          a.button-shadowed(href='index.html') Bleep bloop boop
+    // FOOTER
+    footer.footer
+      .wrap
+        span.social Last Edited April 18, 2015

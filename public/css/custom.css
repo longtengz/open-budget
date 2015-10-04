@@ -1,0 +1,303 @@
+#blah1
+{
+    float: right;
+}
+#ph_index
+{
+	background: url(../images/cityhall.png) no-repeat center center;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 870px;
+}
+
+#ph_contactHeader
+{
+	background: url(../images/background_contact.png) no-repeat center center;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 750px;
+}
+
+#ph_aboutHeader
+{
+	background-color: #33CCFF;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 360px;
+}
+#about-me-content
+{
+    background-color: #FFFFCC;
+}
+
+.header-content {
+	padding-top: 125px;
+}
+
+.header-content p {
+	font-size: 64px;
+	color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,1.0), 0 0 10px rgba(0,0,0,1.0);
+}
+
+.header-content img {
+    width: 150px;
+    height: 150px;
+    margin-top: -175px;
+    float: right;
+}
+
+.header-background-box {
+    position: relative;
+    background-color: rgba(0,0,0,0.6);
+    height: 300px;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+.button-shadowed {
+	border-style: solid;
+	border-width: 1.5px;
+	border-color: white;
+	transition: background-color 0.3s ease;
+	background-color: rgba(0, 0, 0, 0);
+	color: white;
+	border-radius: 4px;
+	padding: 10px;
+	margin: 10px;
+	margin-left: 25px;
+	margin-right: 25px;
+	font-size: 24px;
+	font-weight: lighter;
+    text-shadow: 0 0 6px rgba(0,0,0,1.0), 0 0 6px rgba(0,0,0,1.0), 0 0 6px rgba(0,0,0,1.0);
+    box-shadow: 0 0 15px rgba(0,0,0,1.0);
+
+}
+
+.button-shadowed:hover {
+	background-color: rgba(0, 0, 0, 0.3);
+	color: white;
+	cursor:pointer;
+}
+
+.button {
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: white;
+    transition: background-color 0.3s ease;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 25px;
+    margin-right: 25px;
+    font-size: 24px;
+    font-weight: lighter;
+
+}
+
+.button:hover {
+    background-color: rgba(200, 200, 200, 0.5);
+    color: white;
+    cursor:pointer;
+}
+
+.button-dark {
+	border-style: solid;
+	border-width: 1.5px;
+	border-color: black;
+	transition: background-color 0.3s ease;
+	background-color: rgba(0, 0, 0, 0);
+	color: black;
+	border-radius: 4px;
+	padding: 10px;
+	padding-left: 25px;
+	padding-right: 25px;
+	margin: 10px;
+	margin-left: 25px;
+	margin-right: 25px;
+	font-size: 18px;
+	font-weight: lighter;
+
+}
+
+.button-dark:hover {
+	background-color: rgba(200, 200, 200, 0.4);
+	color: black;
+	cursor:pointer;
+}
+
+
+
+.navBar {
+    position: absolute;
+    z-index: 1000;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 0px;
+    transition: background-color 0.3s ease;
+}
+
+.navBar:hover {
+    background-color: rgba(0,0,0,1.0);
+}
+
+.navBar ul {
+    list-style-type: none;
+    margin: 0;
+    padding-right: 50px;
+    padding-top: 12px;
+}
+
+.navBar li {
+    display: inline;
+    float: right;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 18px;
+}
+
+.navBar a {
+    color: white;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.navBar .left {
+    float: left;
+    padding-left: 40px;
+}
+
+.navBar .left a {
+    opacity: 1.0;
+    text-shadow: 0 0 5px rgba(255,255,255,1.0);
+}
+
+.navBar a.active {
+    opacity: 1.0;
+    text-shadow: 0 0 5px rgba(255,255,255,1.0);
+}
+
+.navBar a:hover {
+    opacity: 1.0;
+    text-shadow: 0 0 5px rgba(255,255,255,1.0);
+}
+
+img.navBar-logo {
+    position: absolute;
+    left: 20px;
+    top: -5px;
+    width: 60px;
+    height: 60px;
+    z-index: 9999;
+}
+
+@media only screen and (max-width:1000px) {
+
+    .navBar ul {
+        padding-right: 40px;
+    }
+
+    .navBar li {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 16px;
+    }
+
+    .navBar .left {
+        padding-left: 45px;
+    }
+
+    img.navBar-logo {
+        left: 10px;
+    }
+
+}
+
+@media only screen and (max-width:640px) {
+
+    .navBar ul {
+        padding-right: 30px;
+    }
+
+    .navBar li {
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 15px;
+    }
+
+    .navBar .left {
+        padding-left: 50px;
+    }
+
+    img.navBar-logo {
+        left: 0px;
+    }
+}
+
+
+.juicebox-embed {
+	padding-top: 50px;
+}
+
+
+
+
+.page-chooser {
+    background: #0b121d;
+    width: 100%;
+    height: 60px
+}
+
+.page-chooser ul {
+    list-style-type: none
+}
+
+.page-chooser li {
+    display: inline-block;
+    line-height: 60px;
+    margin-right: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: rgba(255, 255, 255, .6);
+    transition: .2s color linear;
+    position: relative
+}
+
+.page-chooser li:after {
+    bottom: -6px;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #fff;
+    border-width: 6px;
+    margin-left: -6px;
+    transition: .2s bottom ease;
+}
+
+.page-chooser li:hover {
+    color: rgba(255, 255, 255, .9)
+}
+
+.page-chooser li.active {
+    color: #FFF;
+}
+
+.page-chooser li.active:after {
+    bottom: 0
+}
