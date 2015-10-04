@@ -62,8 +62,10 @@ fs.readFile('./data.json', 'utf8', function (err, data) {
 
         type = parseInt(obj.Revenues[idx].type);
 
-        anti = parseFloat(obj.Revenues[idx]['2014 Anticipated'] || -1);
-        real = parseFloat(obj.Revenues[idx]['2014 Realized'] || -1);
+        // console.log(obj.Revenues[idx][' 2014 Anticipated ']);
+
+        anti = parseFloat(obj.Revenues[idx][' 2014 Anticipated '] || -1);
+        real = parseFloat(obj.Revenues[idx][' 2014 Realized '] || -1);
 
         revenues[index++] = {
             item: item,
@@ -74,8 +76,8 @@ fs.readFile('./data.json', 'utf8', function (err, data) {
             type: type
         }
 
-        anti = parseFloat(obj.Revenues[idx]['2015 Anticipated'] || -1);
-        real = parseFloat(obj.Revenues[idx]['2015 Realized'] || -1);
+        anti = parseFloat(obj.Revenues[idx][' 2015 Anticipated '] || -1);
+        real = parseFloat(obj.Revenues[idx][' 2015 Realized '] || -1);
         // -1 indicates not spcified
 
 
@@ -159,7 +161,7 @@ fs.readFile('./data.json', 'utf8', function (err, data) {
         rev.save(cb);
     }
 
-    for (var idx = 0; idx < aprops; idx++) {
+    for (var idx = 0; idx < aprops.length; idx++) {
         apr = new Aprop(aprops[idx]);
 
         apr.save(cb);

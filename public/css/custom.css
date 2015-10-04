@@ -301,3 +301,11 @@ img.navBar-logo {
 .page-chooser li.active:after {
     bottom: 0
 }
+#page-center-para {
+    display: block;
+    margin: 0 auto;
+    width: 820px;
+	font-size: 32px;
+	color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,1.0), 0 0 10px rgba(0,0,0,1.0);
+}

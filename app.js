@@ -15,8 +15,24 @@ mongoose.connect(db_url);
 
 app.set('view engine', 'jade');
 
-app.get('/', function(req, res) {
-    res.render('index', {title: 'New Brunswick Open Budget', message: 'Hello there!'});
+app.get('/appropriation/', function (req, res) {
+    var  obj = {};
+
+    paid_max = parseFloat(req.query.pm);
+    paid_min = parseFloat(req.query.pn);
+
+
+    if (!isNaN(paid_max) || !isNaN(paid_min)) {
+        obj.paid = {};
+
+        if (!isNaN(paid_max)) {
+            obj.anticipated.$lt = anti_max;
+        }
+
+        if (!isNaN(anti_min)) {
+            obj.anticipated.$gt = anti_min;
+        }
+    }
 });
 
 
@@ -25,7 +41,7 @@ app.get('/revenue/', function (req, res) {
     var anti_max, anti_min,
         real_max, real_min, fcoa, year_max, year_min;
 
-    obj = {};
+    var obj = {};
 
     if (req.query.item != undefined) {
         obj.item = new RegExp(req.query.item);
@@ -99,6 +115,10 @@ var server = app.listen(8080, "10.240.0.3", function () {
   var port = server.address().port;
 
   console.log('Example app listening at http://%s:%s', host, port);
+});
+
+app.get('/about', function (req, res) {
+    res.render('about');
 });
 
 
