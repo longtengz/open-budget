@@ -83,10 +83,18 @@ app.get('/search/', function (req, res) {
                });
 });
 
+app.get('/', function (req, res) {
+    res.render('index', { title: 'Home', message: 'Hello there!'});
+});
+
+app.use(express.static(__dirname + '/public'));
 
 var server = app.listen(8080, "10.240.0.3", function () {
-    var host = server.address().address;
-    var port = server.address().port;
+  var host = server.address().address;
+  var port = server.address().port;
 
-    console.log('Example app listening at http://%s:%s', host, port);
+  console.log('Example app listening at http://%s:%s', host, port);
 });
+
+
+
