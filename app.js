@@ -5,6 +5,12 @@ var app = express();
 
 var db_url = "mongodb://10.240.0.2:80/open-budget";
 
+
+var Revenue = require('./db/models/revenue');
+var Aprop = require('./db/models/aprop');
+var Subitem = require('./db/models/subitem');
+var Type = require('./db/models/type');
+
 mongoose.connect(db_url);
 
 app.set('view engine', 'jade');
@@ -15,7 +21,7 @@ app.get('/', function(req, res) {
 
 
 // url: /search/?a=1&b=2
-app.get('/search/', function (req, res) {
+app.get('/revenue/', function (req, res) {
     var anti_max, anti_min,
         real_max, real_min, fcoa, year_max, year_min;
 
@@ -75,12 +81,11 @@ app.get('/search/', function (req, res) {
         }
     }
 
-    var Fund = require('./db/models/fund');
 
-    Fund.find(obj, function (err, funds) {
+    Revenue.find(obj).populate('type').exec(function (err, revs) {
                     res.type('json');
-                    res.json({data: funds});
-               });
+                    res.json({data: revs});
+               });;
 });
 
 app.get('/', function (req, res) {

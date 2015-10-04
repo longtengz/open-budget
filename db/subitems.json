@@ -1,0 +1,12 @@
+{"data": [
+        {
+            "_id": 1,
+            "text": "Salaries and Wages"
+        },
+
+        {
+            "_id": 2,
+            "text": "Other Expenses"
+        }
+    ]
+}

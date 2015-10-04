@@ -1,0 +1,91 @@
+{"data": [
+        {
+            "_id": 1,
+            "text": "General Government"
+        },
+        {
+            "_id": 2,
+            "text": "Department of Administration"
+        },
+        {
+            "_id": 3,
+            "text": "Department of Policy and Economic Development"
+        },
+        {
+            "_id": 4,
+            "text": "Department of Law"
+        },
+        {
+            "_id": 5,
+            "text": "Department of Finance"
+        },
+        {
+            "_id": 6,
+            "text": "Department of Engineering"
+        },
+        {
+            "_id": 8,
+            "text": "Department of Public Works"
+        },
+        {
+            "_id": 9,
+            "text": "Department of Social Services"
+        },
+        {
+            "_id": 10,
+            "text": "Department of Fire"
+        },
+        {
+            "_id": 11,
+            "text": "Municipal Court"
+        },
+        {
+            "_id": 12,
+            "text": "Construction Code"
+        },
+        {
+            "_id": 13,
+            "text": "Surplus Anticipated"
+        },
+        {
+            "_id": 14,
+            "text": "Miscellaneous Revenues - Section A: Local Revenues"
+        },
+        {
+            "_id": 15,
+            "text": "Miscellaneous Revenues - Section B: State Aid Without Offsetting Appropriations"
+        },
+        {
+            "_id": 16,
+            "text": "Miscellaneous Revenues - Section C: Dedicated Uniform Construction Code Fees Offset with Appropriation"
+        },
+        {
+            "_id": 17,
+            "text": "Miscellaneous Revenues - Section D: Special Items of General Revenue Anticipated with Prior Written Consent of the Director of Local Government Services - Shared Service Agreements Offset with Appropriations"
+        },
+        {
+            "_id": 18,
+            "text": "Miscellaneous Revenues - Section E: Special Items of General Revenue Anticipated with Prior Written Consent of Director of Local Government Services - Additional Revnues Offset with Appropriations"
+        },
+        {
+            "_id": 19,
+            "text": "Miscellaneos Revnues - Section F: Special Items of General Revenue Anticipated with Prior Written Consent of Director of Local Government Services - Public and Private Revenues Offset with Appropriations"
+        },
+        {
+            "_id": 20,
+            "text": "Miscellaneous Revenues - Section G: Special Items of General Revenue Anticipated with Prior Written Consen of Director of Local Government Services - Other Special Items"
+        },
+        {
+            "_id": 21,
+            "text": "Receipts from Delinquet Taxes"
+        },
+        {
+            "_id": 22,
+            "text": "Amount to be Raised by Taxes for Support of Municipal Budget"
+        },
+        {
+            "_id": 23,
+            "text": "Department of Police"
+        }
+    ]
+}
