@@ -27,10 +27,11 @@ html(lang='en')
         li
           a(href='/about') About
         li
-          a(href='/index') Home
+          a(href='/') Home
       ul
         li
-          a(href='/index') Back
+          a(href='/') Back
+
     canvas#clients(width='1200', height='1200')
 
     #ph_budget.header.profile.light
@@ -78,12 +79,11 @@ html(lang='en')
               return arr;
           }
 
-          function make_chart(search_text, value_type) {
-              $.getJSON('/get_budget/?' + search_text,function(obj){
+              $.getJSON('/get_budget/?an=1000000&am=15000000',function(obj){
                 arr_item = extract_prop2014(obj.data, "item");
 
-                arr_revenue2014 = extract_prop2014(obj.data, value_type);
-                arr_revenue2015 = extract_prop2015(obj.data, value_type);
+                arr_revenue2014 = extract_prop2014(obj.data, "anticipated");
+                arr_revenue2015 = extract_prop2015(obj.data, "anticipated");
 
                 var barData = {
                       labels: arr_item,
@@ -104,10 +104,6 @@ html(lang='en')
 
 
                 });
-                     
-          }
-
-          make_chart("an=1000000&am=15000000", "anticipated");
 
 
 
